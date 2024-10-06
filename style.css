@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didot&display=swap');
+
+body {
+    background-color: white;
+    font-family: 'Didot', 'Bodoni', serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+h1, h2, button {
+    font-family: 'Didot', 'Bodoni', serif;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 48px; /* Larger font size */
+}
+
+h2.jetbrains-title {
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 10px;
+    font-size: 50px; /* Larger font size */
+}
+
+.logo {
+    width: 300px; /* Increased logo size */
+    margin-bottom: 40px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px; /* Larger font size */
+    background-color: #d3d3d3;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: grey;
+    color: black;
+    border-color: black;
+}

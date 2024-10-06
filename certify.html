@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificar Dados</title>
+    <style>
+        body {
+            font-family: 'Didot', 'Bodoni', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: transparent;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        #response {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="certifyForm" enctype="multipart/form-data">
+        <h1>Certificar Dados</h1>
+        <input type="file" name="data-file" required>
+        <button type="submit">Certificar</button>
+        <div id="response"></div>
+    </form>
+
+    <script>
+        const form = document.getElementById('certifyForm');
+        const responseDiv = document.getElementById('response');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/certify', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    responseDiv.innerHTML = `
+                        <p>Transação enviada com sucesso!</p>
+                        <p>ID da Transação: <a href="https://blockstream.info/tx/${data.txid}" target="_blank">${data.txid}</a></p>
+                    `;
+                } else {
+                    const errorData = await response.json();
+                    responseDiv.innerHTML = `<p>Erro: ${errorData.error}</p>`;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                responseDiv.innerHTML = `<p>Ocorreu um erro ao processar sua solicitação.</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>

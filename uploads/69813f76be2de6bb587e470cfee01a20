@@ -1,0 +1,38 @@
+--====================================================================================--
+## 					METADATA                                      ##
+##										      ##
+## 				Brazilian Forest Act 		       		      ##
+--====================================================================================--
+File Name: pa_br_municipios_deficitAPPRL_2017_imaflora_sirgas.shp
+Date: 2017
+Type: Vector - shapefile
+Quality: Multi-scale
+Datum: SIRGAS 2000
+EPSG: 4674
+Source: IMAFLORA, in partnership with GeoLab - ESALQ / USP and Royal Institute of Technology (KTH - Sweden).
+Form of citation: Guidotti, V. Freitas, F. L. Sparovek, G. Pinto, L. F. G. Hamamura, C. Carvalho, T. Cerignoni, F. (2017) Números Detalhados do Novo Código Florestal e suas Implicações para os PRAs. Sustentabilidade em debate, Número 5 - Piracicaba, SP: Imaflora. 10 p.
+--====================================================================================--
+## 				  Variables description			             ##
+--====================================================================================--
+cd_mun = IBGE Geocode for Brazilian municipalities
+nm_mun = Name of the municipality
+
+s_count = Number of properties that are classified as small properties (Less than 4 tax modules)
+s_LRdef = Legal Reserve Deficit on small farms (hectares)
+s_APPdef = Permanent Preservation Area Deficit in small farms (hectares)
+s_countDef = Number of properties, which are classified as small properties, with a deficit
+s_countDefAr = Property area (hectare) with deficit
+
+m_count = Number of properties that are classified as medium size properties (between 4 and 15 tax modules)
+m_LRdef = Legal Reserve Deficit in medium size properties (hectares)
+m_APPdef = Permanent Preservation Area Deficit in medium size properties (hectares)
+m_countDef = Number of properties, which are classified as medium size properties, with a deficit
+m_countDefAr = Property area (hectare) with deficit
+
+l_count = Number of properties that are classified as large properties (greater than 15 tax modules)
+l_LRdef = Legal Reserve Deficit in large properties (hectares)
+l_APPdef = Permanent Preservation Area Deficit in large properties (hectares)
+l_countDef = Number of properties, which are classified as large properties, with a deficit
+l_countDefAr = Property area (hectare) with deficit
+
+*Its important to note that s_countDefAr, m_countDefAr and l_countDefAr are the environmental deficit in hectares related to the total area of property
