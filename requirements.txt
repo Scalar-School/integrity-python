@@ -1,0 +1,4 @@
+flask
+bitcoinlib
+requests
+mnemonic
